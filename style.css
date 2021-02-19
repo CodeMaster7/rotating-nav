@@ -2,7 +2,6 @@
 
 * {
   box-sizing: border-box;
-  border: .1em solid black;
 }
 
 body {
@@ -53,6 +52,14 @@ body {
     -o-transition: transform 0.5s linear;
 }
 
+.container.show-nav .circle {
+    transform: rotate(-70deg);
+    -webkit-transform: rotate(-70deg);
+    -moz-transform: rotate(-70deg);
+    -ms-transform: rotate(-70deg);
+    -o-transform: rotate(-70deg);
+}
+
 .circle button {
     cursor: pointer;
     position: absolute;
@@ -83,10 +90,86 @@ body {
     transform-origin: top left;
 }
 
+.container.show-nav + nav li {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transition-delay: 0.3s;
+}
+
+nav {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style-type: none;
+    padding-left: 30px;
+}
+
+nav ul li {
+    text-transform: uppercase;
+    color: #fff;
+    margin: 40px 0;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transition: transform 0.4s ease-in;
+    -webkit-transition: transform 0.4s ease-in;
+    -moz-transition: transform 0.4s ease-in;
+    -ms-transition: transform 0.4s ease-in;
+    -o-transition: transform 0.4s ease-in;
+}
+
+
+nav ul li + li {
+    margin-left: 15px;
+    transform: translateX(-150%);
+    -webkit-transform: translateX(-150%);
+    -moz-transform: translateX(-150%);
+    -ms-transform: translateX(-150%);
+    -o-transform: translateX(-150%);
+}
+
+nav ul li + li + li {
+    margin-left: 30px;
+    transform: translateX(-200%);
+    -webkit-transform: translateX(-200%);
+    -moz-transform: translateX(-200%);
+    -ms-transform: translateX(-200%);
+    -o-transform: translateX(-200%);
+
+}
+nav ul li i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
 .content img {
     max-width: 100%;
 }
 
 .content {
-    
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.content  h1 {
+    margin: 0;
+}
+
+.content small {
+    color: #555;
+    font-style: italic;
+}
+
+.content p {
+    color: #333;
+    line-height: 1.5;
 }
